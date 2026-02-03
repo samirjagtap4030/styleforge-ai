@@ -1,6 +1,6 @@
 # StyleForge AI - Fashion Image Transformation
 
-A polished, premium UI prototype for AI-powered outfit transformation. Transform any image into stunning editorial fashion looks.
+A polished, premium UI prototype for AI-inspired fashion styling and visual enhancement. Transform any image into stunning editorial fashion looks.
 
 ![StyleForge AI](https://via.placeholder.com/800x400?text=StyleForge+AI+Fashion+Transformation)
 
@@ -49,14 +49,14 @@ Using VS Code:
 ## 📁 Project Structure
 
 ```
-ClotheRemoverApp/
+IndianFashionLab/
 ├── index.html      # Main HTML structure
 ├── index.css       # Premium styling with design system
 ├── app.js          # Application logic with AI service layer
 └── README.md       # This file
 ```
-
-## 🔌 AI Integration Guide
+Note: This is a UI prototype and demo. AI integration is optional and not enabled by default.
+## 🔌 Optional / Future
 
 The app is designed with a modular `AIService` layer that makes it easy to plug in real AI APIs.
 
@@ -152,7 +152,7 @@ Edit CSS variables in `index.css`:
 
 This application is designed for **fashion image transformation only**:
 
-- ✅ Outfit replacement with elegant, editorial styles
+- ✅ Fashion styling and editorial visual enhancement
 - ✅ Fashion-forward designs with tasteful necklines
 - ✅ High-end photoshoot aesthetics
 - ✅ Adults 18+ only
@@ -183,3 +183,4 @@ This project is for educational and demonstration purposes.
 ---
 
 Made with ✨ by StyleForge AI Team
+
