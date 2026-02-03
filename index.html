@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="StyleForge AI - Editorial fashion styling through intelligent image enhancement. Transform your photos with professional style presets.">
+    <title>StyleForge AI | Fashion Image Styling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">StyleForge<span class="logo-ai">AI</span></span>
+            </div>
+            <p class="header-tagline">Editorial fashion styling through intelligent image enhancement</p>
+        </div>
+        <nav class="nav">
+            <a href="#transform" class="nav-item active">Transform</a>
+            <a href="#gallery" class="nav-item">Gallery</a>
+            <a href="#about" class="nav-item">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Hero Section -->
+        <section class="hero" id="transform">
+            <h1 class="hero-title">
+                <span class="hero-line">Transform Your Look</span>
+                <span class="hero-accent">Into Editorial Fashion</span>
+            </h1>
+            <p class="hero-subtitle">
+                Professional style presets for stunning, magazine-ready results
+            </p>
+        </section>
+
+        <!-- Transform Studio -->
+        <section class="studio">
+            <div class="studio-panels">
+                <!-- Input Panel -->
+                <div class="panel input-panel">
+                    <div class="panel-header">
+                        <span class="panel-icon">📷</span>
+                        <h2 class="panel-title">Original Image</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="upload-zone" id="uploadZone">
+                            <div class="upload-placeholder" id="uploadPlaceholder">
+                                <div class="upload-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                        <polyline points="17 8 12 3 7 8" />
+                                        <line x1="12" y1="3" x2="12" y2="15" />
+                                    </svg>
+                                </div>
+                                <span class="upload-text">Drop image here</span>
+                                <span class="upload-subtext">or click to browse</span>
+                                <span class="upload-formats">PNG, JPG, WEBP • Max 10MB</span>
+                            </div>
+                            <img id="inputPreview" class="preview-image hidden" alt="Original image">
+                            <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp" hidden>
+                        </div>
+                        <button class="btn btn-secondary" id="clearBtn" disabled>
+                            <span>✕</span> Clear Image
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Transform Controls -->
+                <div class="controls-center">
+                    <button class="transform-btn" id="transformBtn" disabled>
+                        <span class="btn-icon">✨</span>
+                        <span class="btn-text">Transform</span>
+                        <span class="btn-subtext">Apply Style</span>
+                    </button>
+
+                    <div class="style-selector">
+                        <label class="style-label">Style Preset</label>
+                        <div class="style-options" id="styleOptions">
+                            <button class="style-option active" data-style="editorial">
+                                <span class="style-icon">👗</span>
+                                <span>Editorial</span>
+                            </button>
+                            <button class="style-option" data-style="glamour">
+                                <span class="style-icon">✨</span>
+                                <span>Glamour</span>
+                            </button>
+                            <button class="style-option" data-style="avant-garde">
+                                <span class="style-icon">🎭</span>
+                                <span>Avant-Garde</span>
+                            </button>
+                            <button class="style-option" data-style="minimalist">
+                                <span class="style-icon">◯</span>
+                                <span>Minimalist</span>
+                            </button>
+                            <button class="style-option" data-style="beach">
+                                <span class="style-icon">☀️</span>
+                                <span>Beach</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Processing Indicator -->
+                    <div class="processing" id="processing">
+                        <div class="processing-spinner"></div>
+                        <span class="processing-text">Applying style preset...</span>
+                        <div class="processing-steps">
+                            <span class="step" id="step1">Analyzing image</span>
+                            <span class="step" id="step2">Processing colors</span>
+                            <span class="step" id="step3">Applying lighting</span>
+                            <span class="step" id="step4">Finalizing style</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Panel -->
+                <div class="panel output-panel">
+                    <div class="panel-header">
+                        <span class="panel-icon">🪄</span>
+                        <h2 class="panel-title">Styled Result</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="result-zone" id="resultZone">
+                            <div class="result-placeholder" id="resultPlaceholder">
+                                <div class="result-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg>
+                                </div>
+                                <span class="result-text">Styled image</span>
+                                <span class="result-subtext">will appear here</span>
+                            </div>
+                            <img id="outputPreview" class="preview-image hidden" alt="Styled result">
+                        </div>
+                        <button class="btn btn-primary" id="downloadBtn" disabled>
+                            <span>⬇</span> Download Result
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature">
+                <span class="feature-icon">🎯</span>
+                <h3>Precision Styling</h3>
+                <p>Preserves your pose, proportions & natural look</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">👗</span>
+                <h3>Editorial Quality</h3>
+                <p>Professional color grading with cinematic lighting</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
+                <h3>Privacy First</h3>
+                <p>All processing happens locally on your device</p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <h2 class="section-title">
+                <span class="section-icon">🖼️</span>
+                Style Gallery
+            </h2>
+            <p class="section-subtitle">Sample transformations showcasing our style presets</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="images/mh_editorial_1770117614405.png" alt="Maharashtrian Editorial Fashion"
+                            class="gallery-image">
+                    </div>
+                    <span class="gallery-caption">Editorial Portrait</span>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="images/mh_glamour_1770117644943.png" alt="Maharashtrian Glamour Style"
+                            class="gallery-image">
+                    </div>
+                    <span class="gallery-caption">Glamour Lighting</span>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="images/mh_avantgarde_1770117674571.png" alt="Fusion Avant-Garde Fashion"
+                            class="gallery-image">
+                    </div>
+                    <span class="gallery-caption">Avant-Garde Style</span>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="images/mh_minimalist_1770117700038.png" alt="Minimalist Handloom Style"
+                            class="gallery-image">
+                    </div>
+                    <span class="gallery-caption">Minimalist Look</span>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="images/mh_beach_1770117730784.png" alt="Konkan Beach Fashion" class="gallery-image">
+                    </div>
+                    <span class="gallery-caption">Beach Vibes</span>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-container">
+                        <img src="images/mh_classic_1770117771496.png" alt="Classic Nauvari Portrait"
+                            class="gallery-image">
+                    </div>
+                    <span class="gallery-caption">Classic Portrait</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <h2 class="section-title">
+                <span class="section-icon">ℹ️</span>
+                About StyleForge AI
+            </h2>
+
+            <div class="about-content">
+                <div class="about-card">
+                    <h3>What We Do</h3>
+                    <p>StyleForge AI is a fashion image styling application that enhances your photos with
+                        professional-grade visual presets. Our style filters apply editorial lighting, color grading,
+                        and aesthetic enhancements inspired by high-fashion photography.</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>How It Works</h3>
+                    <p>Upload any fashion portrait and select from our curated style presets—Editorial, Glamour,
+                        Avant-Garde, Minimalist, or Beach. Each preset applies unique color, contrast, and lighting
+                        adjustments to give your image a distinct aesthetic.</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Privacy & Security</h3>
+                    <p>All image processing happens locally in your browser. Your photos are never uploaded to external
+                        servers or stored anywhere. We use client-side canvas technology for 100% offline-capable
+                        processing.</p>
+                </div>
+
+                <div class="about-card about-notice">
+                    <h3>Important Notice</h3>
+                    <ul>
+                        <li>✓ This app applies visual style enhancements only</li>
+                        <li>✓ It does not replace, remove, or transform clothing</li>
+                        <li>✓ Intended for adults 18+ only</li>
+                        <li>✓ Editorial and fashion styling use only</li>
+                        <li>✗ No nudity or explicit content</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <span class="footer-logo">✦ StyleForge<span class="logo-ai">AI</span></span>
+                <p>Editorial fashion styling through intelligent image enhancement</p>
+            </div>
+            <div class="footer-links">
+                <a href="#transform">Transform</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <p>© 2026 StyleForge AI. All rights reserved.</p>
+            <p class="footer-note">Adults 18+ only • Editorial & fashion styling use</p>
+            <p class="footer-privacy">Images are processed locally and never stored on external servers.</p>
+        </div>
+        <div class="footer-disclaimer">
+            <p>⚠️ Disclaimer: This app applies visual style enhancements (color grading, lighting adjustments) only. It
+                does not replace, remove, or transform clothing items in any way.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message" id="toastMessage">Success!</span>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>
